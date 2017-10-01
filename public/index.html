@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<title>VideoLT</title>
+<link rel="stylesheet" href="VideoLT.css">
+</html>
+<body>
+<div ng-app="VideoLT" ng-controller="VideoLTController as ctrl">
+  <form>
+    <div><label for="url">Youtube video id:</label> <input id="url" type="text" ng-model="ctrl.url"></div>
+    <div><label for="hash">Tweeter hashtag:</label> <input id="hash" type="text" ng-model="ctrl.hashtag"></div>
+    <div><label for="date">Live start date:</label> <input id="date" type="date" ng-model="ctrl.date"></div>
+    <button ng-click="ctrl.toggle()">{{ctrl.toggleLabel}}</button>
+    <button ng-click="ctrl.reset()">Reset</button>
+  </form>
+  <div id="player"></div>
+  <div id="live-tweets">
+    <ol></ol>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+<!-- script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+  return t;
+}(document, "script", "twitter-wjs"));</script -->
+<script src="VideoLT.js"></script>
+</body>
+</html>
